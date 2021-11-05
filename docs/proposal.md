@@ -16,7 +16,7 @@ Text input for small smart devices can be done in various ways, for example, thr
 
 What is new in your approach and why do you think it will be successful?
 
-Our new approach is to use the accelerometer and gyroscope on the Arduino Nano 33 BLE board to mimic the smart watch commercial products like Fitbit and Apple watches which these sensors are already integrated. We can utilize the accelerometer and gyroscope to sense the movement of user's hand when typing certain virtual numeric keys like number 1, 2, 3... Then, through learning the movements, keys typed by user can be identified and further process by the system. Which it can be very useful for small smart devices due to the physical size limitation of the screen.
+Our new approach is to use the accelerometer and gyroscope on the Arduino Nano 33 BLE board to mimic the smart watch commercial products like Fitbit and Apple watches which these sensors are already integrated. We can utilize the accelerometer and gyroscope to sense the movement of user's hand when typing certain virtual numeric keys like number 1, 2, 3, 4, 5... Then, through learning the movements, keys typed by user can be identified and further process by the system. Which it can be very useful for small smart devices due to the physical size limitation of the screen.
 
 ## 4. Potential Impact
 
@@ -28,7 +28,7 @@ Due to the size limitation of the small smart device like Fitbit, Apple watches,
 
 What are the challenges and risks?
 
-Some of the challenges can be real time interference between sensors and device, sample rate of the sensors, accuracy of the sensors, etc.
+Some of the challenges can be real time interference between sensors and device, Arduino and real time synchronization during data collection, sample rate of the sensors, accuracy of the sensors, etc.
 
 ## 6. Requirements for Success
 
