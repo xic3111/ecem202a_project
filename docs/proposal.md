@@ -34,7 +34,7 @@ Some of the challenges can be real time interference between sensors and device,
 
 What skills and resources are necessary to perform the project?
 
-Skills like machine learning, coding in C and Python is necessary for the project.
+Skills like machine learning, coding in C and Python is necessary for the project. Resources like Arduino Nano 33 BLE board documents, prior related papers and researches  is needed.
 
 ## 7. Metrics of Success
 
@@ -48,13 +48,13 @@ Describe the key tasks in executing your project, and in case of team project de
 
 Week 5: Prior papers & research, define project
 
-Week 6: Data collection, start data preprocessing
+Week 6: Data collection
 
-Week 7: Data preprocessing, start training data
+Week 7: Data collection and preprocessing
 
-Week 8: Preliminary trained model
+Week 8: Preliminary trained model, midterm presentation prepration
 
-Week 9: Optimize trained model, load to arduino
+Week 9: Optimize trained model
 
 Week 10: Test and validate, final presentation prepration
 
@@ -74,7 +74,7 @@ Similar to iKey, Oinput [3] was introduced to utilize vibration sensors to detec
 
 List datasets that you have identified and plan to use. Provide references (with full citation in the References section below).
 
-We are going to collect data from around 20 people for this project.
+We are going to collect data from people for this project.
 
 ### 9.c. Software
 
