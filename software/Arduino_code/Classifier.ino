@@ -42,7 +42,7 @@ void loop () {
   }
   
   while (samplesRead < numSamples) {
-    if (c < SAMPLES - 1) {                                          // Get sensor data to features array until it reaches 240 samples
+    if (c < SAMPLES - 1) {                                          // Get sensor data to features array until it reaches 240 samples for the sliding window
       if (IMU.accelerationAvailable()&&IMU.gyroscopeAvailable()) {
         IMU.readAcceleration(acc_x, acc_y, acc_z);
         IMU.readGyroscope(gyro_x, gyro_y, gyro_z);
