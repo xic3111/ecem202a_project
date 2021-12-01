@@ -79,6 +79,20 @@ Live processing and prediction with Arduino consists of three main parts, data c
 
 # 4. Evaluation and Results
 
+Below are the results for model training accuracy with each of the classifier:
+
+For binary classifier to determine whether there's a keypress,
+
+| Classifier        | KNN           | GaussianNB  | RandomForest  | DecisionTree  | LogisticRegression  | SVM  |
+| ------------- |:-------------:| :-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+| Accuracy      | 97.1% | 92.0% | 98.8%  |  98.0% |  98.2%  |  97.0% |
+
+For segment classifier to determine the unit moved between keypresses,
+
+| Classifier        | KNN           | GaussianNB  | RandomForest  | DecisionTree  | LogisticRegression  | SVM  |
+| ------------- |:-------------:| :-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+| Accuracy       | 90.4% | 66.8% | 96.4%  |  91.6% | 92.5%  |  N/A |
+
 # 5. Discussion and Conclusions
 
 # 6. References
