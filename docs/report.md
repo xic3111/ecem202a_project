@@ -45,7 +45,8 @@ The Numeric Virtual Keyboard system can be seperated into several sections, data
 
 The hardware used this project is the Arduino NANO 33 BLE Sense board, this is a very power, cost efficient micro-controller which contains sensors that are capable to measure voice, gesture, motion, etc. For this project, we use the Inertial Measurement Unit (IMU) for 3-axis accelerometer and gyrocope measurement with maximum sampling rate of 110Hz.
 
-<img width="842" alt="Arduino" src="https://user-images.githubusercontent.com/91438818/144158117-23ac8d55-6e71-4300-aace-5a6ac298ae06.png">
+<img width="467" alt="Screen Shot 2021-11-30 at 8 33 44 PM" src="https://user-images.githubusercontent.com/91438818/144172410-086f4efd-16a0-4d7c-80de-155cf3874a4b.png">
+
 
 ## 3.3 Data Collection
 
