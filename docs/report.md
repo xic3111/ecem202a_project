@@ -103,9 +103,11 @@ For segment classifier with Losgistic Regression shown below, number -1 indicate
 
 <img width="319" alt="Screen Shot 2021-11-30 at 8 15 14 PM" src="https://user-images.githubusercontent.com/91438818/144170827-eafb48f4-7378-4100-b105-e00b90168f9b.png">
 
-Additionally, when testing real time data with Arduino, the accuracy on detecting the correct sequence of numbers is about 75% with testing and pressing 20 random sequences of numbers. This can be due to several factors, such as the noise from environment, error stacking with just one wrong keypress.
+Additionally, when testing real time data with Arduino, the accuracy on detecting the correct sequence of numbers is about 75% with testing and pressing 20 random sequences of numbers. The accuracy can be due to several factors, such as the noise from environment, error stacking with just one wrong keypress.
 
 # 5. Discussion and Conclusions
+
+Can talk about models, results, future work.
 
 # 6. References
 
