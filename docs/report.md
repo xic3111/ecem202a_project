@@ -35,6 +35,34 @@ However, the techniques presented in these papers require additional hardware wh
 
 # 3. Technical Approach
 
+## 3.1 System Overview
+
+The Numeric Virtual Keyboard system can be seperated into several sections, data collection, data preprocessing, model training & conversion, live prediction with Arduino. An overview for the entire system in shown in the figure below.
+
+<img width="730" alt="Screen Shot 2021-11-30 at 6 07 41 PM" src="https://user-images.githubusercontent.com/91438818/144158799-096f15a2-a3a1-4197-8fe1-fd8c9b289b41.png">
+
+## 3.2 Hardware
+
+The hardware used this project is the Arduino NANO 33 BLE Sense board, this is a very power, cost efficient micro-controller which contains sensors that are capable to measure voice, gesture, motion, etc. For this project, we use the Inertial Measurement Unit (IMU) for 3-axis accelerometer and gyrocope measurement with maximum sampling rate of 110Hz.
+
+<img width="842" alt="Arduino" src="https://user-images.githubusercontent.com/91438818/144158117-23ac8d55-6e71-4300-aace-5a6ac298ae06.png">
+
+## 3.3 Data Collection
+
+<img width="634" alt="Screen Shot 2021-11-30 at 6 16 51 PM" src="https://user-images.githubusercontent.com/91438818/144159823-a5957af2-c249-4bf6-9e79-68590b817ce2.png">
+
+## 3.4 Data Preprocessing
+
+<img width="455" alt="Screen Shot 2021-11-30 at 6 18 58 PM" src="https://user-images.githubusercontent.com/91438818/144160041-a97e9cf2-0c4a-4846-bdb9-b941c301d7d5.png">
+
+## 3.5 Model Training & Conversion
+
+
+
+## 3.6 Live Prediction with Arduino
+
+<img width="480" alt="Screen Shot 2021-11-30 at 6 20 58 PM" src="https://user-images.githubusercontent.com/91438818/144160302-7a70ca34-bc09-4f03-bec7-9c1daa25f3c6.png">
+
 # 4. Evaluation and Results
 
 # 5. Discussion and Conclusions
