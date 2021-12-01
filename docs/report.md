@@ -37,7 +37,7 @@ However, the techniques presented in these papers require additional hardware wh
 
 ## 3.1 System Overview
 
-The Numeric Virtual Keyboard system can be seperated into several sections, data collection, data preprocessing, model training & conversion, live prediction with Arduino. An overview for the entire system in shown in the figure below.
+The Numeric Virtual Keyboard system can be seperated into several sections, data collection, data preprocessing, model training & conversion, live prediction with Arduino. An overview for the entire system is shown in the figure below.
 
 <img width="730" alt="Screen Shot 2021-11-30 at 6 07 41 PM" src="https://user-images.githubusercontent.com/91438818/144158799-096f15a2-a3a1-4197-8fe1-fd8c9b289b41.png">
 
@@ -55,13 +55,27 @@ The hardware used this project is the Arduino NANO 33 BLE Sense board, this is a
 
 <img width="455" alt="Screen Shot 2021-11-30 at 6 18 58 PM" src="https://user-images.githubusercontent.com/91438818/144160041-a97e9cf2-0c4a-4846-bdb9-b941c301d7d5.png">
 
+The sampling rate for sensor data is about 100 samples/second. After the data is loaded from csv files, the data is then loaded in to pandas format and clip out unneccessary data to achieve better training. Sliding window approach is used to split data into fixed size windows. To achieve best training accuracy and precision performance, a sliding window of 0.4 second (40 samples) and a stride of 0.01 second (1 samples) is used. 
+
 ## 3.5 Model Training & Conversion
 
+Multiple classification models were experimented for the project, such as KNN, Gaussian Naive Bayes, Random forest, Decision tree, Logistic regression, and Support Vector Machine from [Scikit Learn library](https://scikit-learn.org/stable/index.html). Below are the specific parameters that were used for each of the classifiers.
 
+| Classifier        | KNN           | GaussianNB  | RandomForest  | DecisionTree  | LogisticRegression  | SVM  |
+| ------------- |:-------------:| :-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+| Parameters      | Default | Default | max_depth=10  |  Default |max_iter=1000, random_state=0  |  Default |
+
+There are 80% of data (64 samples) used for model training and 20% of data (16 samples) used for model testing. After we finished training each of these models, we choose the model that has the best accuracy for later model conversion and use in live prediction with Arduino. For model conversion, we used [micromlgen library](https://github.com/eloquentarduino/micromlgen) to convert the model to plain C code which it can be interpreted by Arduino for real time prediction.
 
 ## 3.6 Live Prediction with Arduino
 
+Live processing and prediction with Arduino consists of three main parts, data collection & preprocessing, trained models predict binary press & segment unit, and output post processing for predictions. An overview for the Arduino system is shown in the figure below.
+
 <img width="480" alt="Screen Shot 2021-11-30 at 6 20 58 PM" src="https://user-images.githubusercontent.com/91438818/144160302-7a70ca34-bc09-4f03-bec7-9c1daa25f3c6.png">
+
+* Live sensor data is collected using the 6 DoF IMU (Accelerometer & Gyroscope). Then we use sliding window to split sensor data into 40 samples with a stride of 1 sample to be able to repeat the data preprocessing steps for model training.
+* Preprocessed data then loaded into both binary model and segement model. Output of binary model is either 0 or 1 to determine whether a key is pressed. Output of segment model is number ranging from {-4,-3,-2,-1,0,1,2,3,4} to determine the segment unit between presses (where -1 indicates one unit to the left and 1 indicates one unit to the right).
+* Finally, output post precessing combines the binary and segment predictions to determine the keypress and sequence of keypresses.
 
 # 4. Evaluation and Results
 
