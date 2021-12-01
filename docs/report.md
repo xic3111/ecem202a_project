@@ -93,6 +93,18 @@ For segment classifier to determine the unit moved between keypresses,
 | ------------- |:-------------:| :-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
 | Accuracy       | 90.4% | 66.8% | 96.4%  |  91.6% | 92.5%  |  N/A |
 
+From the results shown above, Random Forest classifier has the best accuracy with feature of max_depth = 10. However, Random Forest classifier model is too large and will not be able to convert and fit into Arduino. Thus, Logistic Regression classifier model is choosen for the conversion and fit into Arduino. Below is the confusion matrices for Logistic Regression classifier for both binary and segment.
+
+For binary classifier with Losgistic Regression shown below, number 1 indicates a press, and 0 indicates no press.
+
+<img width="316" alt="Screen Shot 2021-11-30 at 8 14 54 PM" src="https://user-images.githubusercontent.com/91438818/144170808-6a3734ba-f4b8-46e6-92e6-a0e249f5aa0b.png">
+
+For segment classifier with Losgistic Regression shown below, number -1 indicates one unit to the left and 1 indicates one unit to the right. Number 4 is not shown due to no testing data with four units to the right.
+
+<img width="319" alt="Screen Shot 2021-11-30 at 8 15 14 PM" src="https://user-images.githubusercontent.com/91438818/144170827-eafb48f4-7378-4100-b105-e00b90168f9b.png">
+
+Additionally, when testing real time data with Arduino, the accuracy on detecting the correct sequence of numbers is about 75% with testing and pressing 20 random sequences of numbers. This can be due to several factors, such as the noise from environment, error stacking with just one wrong keypress.
+
 # 5. Discussion and Conclusions
 
 # 6. References
