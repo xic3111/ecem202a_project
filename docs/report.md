@@ -108,7 +108,9 @@ Additionally, when testing real time data with Arduino, the accuracy on detectin
 
 # 5. Discussion and Conclusions
 
-Can talk about models, results, future work.
+In this project, a virtual numeric keyboard system is implemented with the classification machine learning model and Arduino. The Logistic Regression machine learning model is chosen due to its light size and high training accuracy. Preprocessing technique like data clipping and sliding window is used to better process the data in order to have a better ML model accuracy. After the ML model is chosen, we converted the model in to plain C code in order to fit into the Arduino. On the Arduino side, as we process real time data, sliding window technique is also used to feed into the pre-trained binary and segment models to make predictions. Post data processing is also performed to combine both binary and segment predictions to output the keypresses predictions. 
+
+Overall, this project is very useful for smart devices like Apple Watch, Fitbit to make text input. The techniques and algorithms are not hard to be implemented onto the existing smart devices that has already an IMU integerated, which most wearable smart devices have. However, this project can be further extended in the future. First, the number of keypresses can be expanded to full 10 digits and even with all the keys on the keyboard. Second, only 80 samples are used to train the ML model, thus, more sensor data can be taken to further improve the robustness and accuracy of the system. Third, the classifier ML model can be further optimized to overcome the noise and other impefections. Fourth, the system assumes the user is facing the keyboard and typing with the right hand on one finger, so future direction can include typing with left hand and with multiple fingers. Lastly, using more sensors on the system could further increase the complexity to achieve better performence. 
 
 # 6. References
 
@@ -119,3 +121,5 @@ Can talk about models, results, future work.
 3. Y. Huang, S. Cai, L. Wang and K. Wu, "Oinput: A Bone-Conductive QWERTY Keyboard Recognition for Wearable Device," 2018 IEEE 24th International Conference on Parallel and Distributed Systems (ICPADS), 2018, pp. 946-953, doi: 10.1109/PADSW.2018.8644590.
 
 4. C. Lian, H. Wang, Y. Zhao, L. Liu, H. Sun and Z. Zhan, "Virtual Keyboard Based on MEMS Sensor Network and Fusion of Accelerometer and Gyroscope," 2018 IEEE 8th Annual International Conference on CYBER Technology in Automation, Control, and Intelligent Systems (CYBER), 2018, pp. 390-394, doi: 10.1109/CYBER.2018.8688194.
+
+5. "Scikit-Learn: Machine Learning In Python — Scikit-Learn 0.23.2 Documentation". Scikit-Learn.Org, 2020, https://scikit-learn.org/stable/.
