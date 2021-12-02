@@ -1,6 +1,6 @@
 # ECE M202A Project - Virtual Numeric Keyboard
 
-# Xiaowen Chen and Spencer Czerwinski
+## Xiaowen Chen and Spencer Czerwinski
 
 # Table of Content
 
