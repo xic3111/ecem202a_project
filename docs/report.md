@@ -50,6 +50,8 @@ The hardware used this project is the Arduino NANO 33 BLE Sense board, this is a
 
 ## 3.3 Data Collection
 
+Initially, we drew our virtual keyboard on a notebook and used the Arduino to collect gyroscope and accelerometer data. However, this data did not have labeled ground truths for our button presses, so we needed a new solution. Our final data was collected using a webpage displayed horizontally on a phone. This provided a comparable size to the drawn keyboard, but allowed for us to include a JavaScript backend that logged and timestamped click events with each press. These timestamps were then used to label the collected data with key presses. The website for data collection is independently hosted at https://spencercz.github.io/M202A_Data/.
+
 <img width="634" alt="Screen Shot 2021-11-30 at 6 16 51 PM" src="https://user-images.githubusercontent.com/91438818/144159823-a5957af2-c249-4bf6-9e79-68590b817ce2.png">
 
 ## 3.4 Data Preprocessing
