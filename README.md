@@ -2,7 +2,7 @@
 
 ## Xiaowen Chen and Spencer Czerwinski
 
-# Table of Content
+# Table of Contents
 
 * [Index](https://github.com/xic3111/ecem202a_project/blob/main/docs/index.md)
 * [Proposal](https://github.com/xic3111/ecem202a_project/blob/main/docs/proposal.md)
