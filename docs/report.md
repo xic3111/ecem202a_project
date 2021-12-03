@@ -9,19 +9,37 @@
 
 # Abstract
 
-Provide a brief overview of the project objhectives, approach, and results.
+The Virtual Numeric Keyboard is a portable device designed to mimic keyboard functionality without having a physical keyboard. Our goal was to use only the Arduino and a keyboard layout to detect key presses from 1 through 5, using signal processing and machine learning. Our approach uses two Logistic Regression classifiers from SciKit Learn in tandem, one to identify the occurrence of key presses and one to predict the key press based on hand movement. Gyroscope and accelerometer data is fed into the classifiers, and they track motion in realtime to output the number identified when a press occurs. Our key press binary classifier is able to identify whether or not a press occurred within a given window with an accuracy of 98%, and our motion segment classifier labels hand motion with an accuracy of 92%. Combined, these two classifiers are able to correctly guess the number pressed on the numeric keyboard with an accuracy of 83%.
 
 # 1. Introduction
 
-This section should cover the following items:
+## 1. Motivation & Objective
 
-* Motivation & Objective: What are you trying to do and why? (plain English without jargon)
-* State of the Art & Its Limitations: How is it done today, and what are the limits of current practice?
-* Novelty & Rationale: What is new in your approach and why do you think it will be successful?
-* Potential Impact: If the project is successful, what difference will it make, both technically and broadly?
-* Challenges: What are the challenges and risks?
-* Requirements for Success: What skills and resources are necessary to perform the project?
-* Metrics of Success: What are metrics by which you would check for success?
+Smart devices such as Fitbit and Apple Watch are designed to be portable and convenient for users. However, due to size limitations, it is very difficult to write or type on these smart devices. Voice input was presented as a substitution for text input, but this method depends on the real world environment and the device's ability to recognize the user's voice, which can be impacted by speech and background noise. Additionally, voice input is slower compared to text input and it has poor privacy protection. Gesture recognition was also introduced as a replacement for text input, but it faces the same challenges of efficiency and stability as voice input. In this project, we present a human-computer interface that can overcome the challenges of gesture and voice input: the wearable virtual keyboard on smart devices. Accelerometer and gyroscope sensors from the Arduino Nano 33 BLE Sense board were used to measure and identify the virtual keystroke being pressed by users. This idea brings convenience to users with more efficiency and privacy. These sensors are integrated on most modern smart devices, which indicates that it could easily be implemented on commercial products. 
+
+## 2. State of the Art & Its Limitations
+
+Text input for small smart devices can be done in various ways, such as through voice on Apple watches. Other ways are through motions, gestures, etc.. The limitation of voice, motions and gestures are its accuracy, input latency, and privacy. 
+
+## 3. Novelty & Rationale
+
+Our new approach is to use the accelerometer and gyroscope on the Arduino Nano 33 BLE board to mimic the smart watch commercial products like Fitbit and Apple Watches, where these sensors are already integrated. We can utilize the accelerometer and gyroscope to sense the movement of the user's hand when typing virtual numeric keys numbered 1 through 5. Then, through learning the movements, keys typed by user can be identified and further processed by the system. This is especially useful for small smart devices due to the physical size limitation of the screen.
+
+## 4. Potential Impact
+
+Due to the size limitation of the small smart device like Fitbit, Apple watches, it is extremely inconvenient to input text. With this project, it can break many of these limitations like convenience, input latency, and privacy (i.e. voice input with Apple Watches). Small smart devices with these sensors integrated can implement typing easily which is necessary for them without physical screen size limitation. We believe our project idea will be implemented by other business in the future.
+
+## 5. Challenges
+
+Some of the challenges are real time interference between sensors and device, Arduino and real time synchronization during data collection, sample rate of the sensors, accuracy of the sensors, and accuracy of the models during training and usage.
+
+## 6. Requirements for Success
+
+In order to find success with this project, we needed to successfully implement machine learning in Python, translate the models to C code for the Arduino, and validate our approach with prior work.
+
+## 7. Metrics of Success
+
+Our success is measured by the accuracy of the classifiers, the latency of the device, and the ease of deployment and use.
 
 # 2. Related Work
 
@@ -37,7 +55,7 @@ However, the techniques presented in these papers require additional hardware wh
 
 ## 3.1 System Overview
 
-The Numeric Virtual Keyboard system can be seperated into several sections, data collection, data preprocessing, model training & conversion, live prediction with Arduino. An overview for the entire system is shown in the figure below.
+The Numeric Virtual Keyboard system can be seperated into several sections: data collection, data preprocessing, model training & conversion, and live prediction with Arduino. An overview for the entire system is shown in the figure below.
 
 <img width="730" alt="Screen Shot 2021-11-30 at 6 07 41 PM" src="https://user-images.githubusercontent.com/91438818/144158799-096f15a2-a3a1-4197-8fe1-fd8c9b289b41.png">
 
