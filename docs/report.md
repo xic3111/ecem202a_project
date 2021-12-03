@@ -13,31 +13,31 @@ The Virtual Numeric Keyboard is a portable device designed to mimic keyboard fun
 
 # 1. Introduction
 
-## 1. Motivation & Objective
+## 1.1 Motivation & Objective
 
 Smart devices such as Fitbit and Apple Watch are designed to be portable and convenient for users. However, due to size limitations, it is very difficult to write or type on these smart devices. Voice input was presented as a substitution for text input, but this method depends on the real world environment and the device's ability to recognize the user's voice, which can be impacted by speech and background noise. Additionally, voice input is slower compared to text input and it has poor privacy protection. Gesture recognition was also introduced as a replacement for text input, but it faces the same challenges of efficiency and stability as voice input. In this project, we present a human-computer interface that can overcome the challenges of gesture and voice input: the wearable virtual keyboard on smart devices. Accelerometer and gyroscope sensors from the Arduino Nano 33 BLE Sense board were used to measure and identify the virtual keystroke being pressed by users. This idea brings convenience to users with more efficiency and privacy. These sensors are integrated on most modern smart devices, which indicates that it could easily be implemented on commercial products. 
 
-## 2. State of the Art & Its Limitations
+## 1.2 State of the Art & Its Limitations
 
 Text input for small smart devices can be done in various ways, such as through voice on Apple watches. Other ways are through motions, gestures, etc.. The limitation of voice, motions and gestures are its accuracy, input latency, and privacy. 
 
-## 3. Novelty & Rationale
+## 1.3 Novelty & Rationale
 
 Our new approach is to use the accelerometer and gyroscope on the Arduino Nano 33 BLE board to mimic the smart watch commercial products like Fitbit and Apple Watches, where these sensors are already integrated. We can utilize the accelerometer and gyroscope to sense the movement of the user's hand when typing virtual numeric keys numbered 1 through 5. Then, through learning the movements, keys typed by user can be identified and further processed by the system. This is especially useful for small smart devices due to the physical size limitation of the screen.
 
-## 4. Potential Impact
+## 1.4 Potential Impact
 
 Due to the size limitation of the small smart device like Fitbit, Apple watches, it is extremely inconvenient to input text. With this project, it can break many of these limitations like convenience, input latency, and privacy (i.e. voice input with Apple Watches). Small smart devices with these sensors integrated can implement typing easily which is necessary for them without physical screen size limitation. We believe our project idea will be implemented by other business in the future.
 
-## 5. Challenges
+## 1.5 Challenges
 
 Some of the challenges are real time interference between sensors and device, Arduino and real time synchronization during data collection, sample rate of the sensors, accuracy of the sensors, and accuracy of the models during training and usage.
 
-## 6. Requirements for Success
+## 1.6 Requirements for Success
 
 In order to find success with this project, we needed to successfully implement machine learning in Python, translate the models to C code for the Arduino, and validate our approach with prior work.
 
-## 7. Metrics of Success
+## 1.7 Metrics of Success
 
 Our success is measured by the accuracy of the classifiers, the latency of the device, and the ease of deployment and use.
 
