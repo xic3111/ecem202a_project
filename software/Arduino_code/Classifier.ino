@@ -80,8 +80,9 @@ void loop () {
           if (num > 5) num = 5;                             // Bounding to avoid exceeding 1 and 5
           if (num < 1) num = 1;
 
+          Serial.print("Keypress: ");
           Serial.print(num);
-          Serial.print(',');
+          Serial.println();
         }
       }
       else if (b == 0 && presses == 1) {                    // If motion is detected (b=1)
